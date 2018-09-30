@@ -1,0 +1,40 @@
+<%= if @current_user do %>
+
+<h2>Tasks</h2>
+<br/>
+<br/>
+<button><%= link "Add a Task", to: issue_path(@conn, :new) %></button>
+
+<br/>
+<br/>
+<table class="table">
+<tbody>
+<%= for issue <- @issues do %>
+    <tr>
+     <div class="row">
+        <div class="col">
+          <div class="card" style="margin-bottom: 2rem;">
+
+            <div class="card-header">Assignor: <%= issue.assignor %></div>
+            <div class="card-body">
+            <p><span class="tags">Title: </span><%= issue.title %></p>
+            <p><span class="tags">Assignee: </span><%= issue.user.name %></p>
+            <p><span class="tags">Completed?: </span><%= issue.completed %></p>
+
+            <span><%= link "Details", to: issue_path(@conn, :show, issue), class: "btn btn-default btn-xs" %></span>
+            <span><%= link "Edit", to: issue_path(@conn, :edit, issue), class: "btn btn-default btn-xs" %></span>
+            <span><%= link "Remove", to: issue_path(@conn, :delete, issue), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+
+         </div>
+        </div>
+      </div>
+     </div>
+    </tr>
+<% end %>
+</tbody>
+</table>
+
+
+<% else %>
+<p> Please login!! </p>
+<% end %>

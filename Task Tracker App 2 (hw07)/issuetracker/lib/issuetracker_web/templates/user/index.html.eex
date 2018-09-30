@@ -1,0 +1,71 @@
+<h2>Users</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Manager Name</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for user <- @users do %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= user.email %></td>
+      <td><%= user.manager_id %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: user_path(@conn, :show, user), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: user_path(@conn, :edit, user), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: user_path(@conn, :delete, user), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+
+
+
+  </tbody>
+</table>
+<h2>Your Details :</h2>
+<p><strong>Name :</strong>
+<%= @current_user.name %></p>
+<p><strong>Email :</strong>
+<%= @current_user.name %></p>
+<p><strong>Manager's Name:</strong>
+<%= @managerdetails.name %></p>
+<span><%= link "Edit", to: user_path(@conn, :edit, @current_user), class: "btn btn-primary" %></span>
+<br />
+<br />
+<br />
+<h3>Your Direct Reports : </h3>
+<br />
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for user <- @users do %>
+<%= if user.manager_id == @current_user.id do %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= user.email %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: user_path(@conn, :show, user), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: user_path(@conn, :edit, user), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: user_path(@conn, :delete, user), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+<% end %>
+
+</tbody>
+</table>
+
+<span><%= link "Back", to: "/tasks" %></span>

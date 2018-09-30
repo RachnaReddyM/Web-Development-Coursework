@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Task 3</title>
+  <style>
+     *
+     {
+       box-sizing: border-box;
+     }
+     .column
+     {
+      float:left;
+      padding: 15px;
+     }
+     .page::after
+     {
+      content:"";
+      clear:both;
+      display:table;
+    }
+
+    .left
+    {
+      width:33.33%;
+    }
+    .right
+    {
+      width:66.67%;
+    }
+    h1
+    {
+      text-align: center;
+    }
+    table,th,td
+    {
+      text-align:left;
+    }
+    a
+    {
+      text-decoration-line: none;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>HW02 Task Three</h1>
+    <div class="column left">
+
+      <table>
+        <tr>
+          <th>Link Text</th>
+        </tr>
+        <tr>
+          <td><a href="javascript:;" id="text1">Lorem Ipsum</a></td>
+        </tr>
+        <tr>
+          <td><a href="javascript:;" id="text2">99 Bottles</a></td>
+        </tr>
+        <tr>
+          <td><a href="javascript:;" id="text3">Last Thing</a></td>
+        </tr>
+      </table>
+    </div>
+    <div class="column right">
+
+      <table>
+        <tr>
+          <th>Right column contents</th>
+        </tr>
+        <tr>
+          <td>
+          <div id="rightcolumn">
+           <div id="lorem" style="display:block;">
+             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+               urna diam, ultricies sed aliquet a, vulputate quis nibh. Vivamus
+               tincidunt velit arcu, at faucibus lacus tristique quis. Nulla
+               lacinia libero erat, at euismod lectus aliquet sagittis. Orci
+               varius natoque penatibus et magnis dis parturient montes,
+               nascetur ridiculus mus. Cras quam lectus, porta vestibulum
+               consequat at, lacinia quis tortor. Nunc id ligula rutrum,
+               fermentum justo ac, rhoncus augue. Donec egestas sit amet lectus
+               id luctus. Nulla tristique ultricies neque. Quisque aliquam
+               elementum venenatis. Sed venenatis, nulla eu vulputate cursus,
+               turpis nulla imperdiet urna, at vulputate purus urna in magna.
+               Proin in purus tellus. Vestibulum egestas vestibulum augue, at
+               tristique lorem viverra vitae. Sed non urna vulputate, bibendum
+               lectus id, aliquet felis. Sed gravida mauris et ligula molestie
+               hendrerit. Vivamus eget risus ut mi ornare congue vel in ante.
+               Proin consequat sem quis est efficitur aliquet.
+             </p>
+             <p>Vestibulum non nibh interdum, placerat nisl sit amet, accumsan
+               nulla. Etiam ac nibh id metus pellentesque aliquam vitae quis
+               velit. Vestibulum ut turpis mattis, rutrum libero vitae, semper
+               lectus. Nam mollis, augue ac viverra ultricies, nunc orci
+               vestibulum nisi, at interdum sapien urna quis nulla. Vestibulum
+               ante ipsum primis in faucibus orci luctus et ultrices posuere
+               cubilia Curae; Class aptent taciti sociosqu ad litora torquent
+               per conubia nostra, per inceptos himenaeos. Pellentesque cursus
+               nibh nulla, ac aliquet dolor placerat vel. Donec nec tincidunt
+               ipsum. Etiam semper arcu in varius dignissim. Proin erat ante,
+               bibendum nec lacinia vitae, tempor quis nisi. Lorem ipsum dolor
+               sit amet, consectetur adipiscing elit. Praesent in lorem non ante
+               imperdiet iaculis sit amet vel velit. Suspendisse molestie, magna
+               et tincidunt aliquam, eros quam accumsan metus, nec scelerisque
+               turpis massa at ipsum. Cras eget magna vitae nunc varius viverra.
+             </p>
+             <p>Etiam ante purus, scelerisque quis ante et, tempus rutrum turpis.
+               Curabitur nisl ex, ullamcorper a mollis non, maximus quis magna.
+               In ante metus, dapibus ac convallis faucibus, commodo eget dolor.
+                Phasellus sagittis, purus eu commodo hendrerit, lorem ante
+                mollis lacus, eget dictum sapien mauris non odio. Vivamus sed
+                sagittis libero. Etiam mattis sed erat sed iaculis. Duis ornare
+                purus id vulputate ullamcorper.</p>
+             <p>Ut hendrerit sem eget odio mollis lacinia. Ut eget feugiat elit.
+                Sed convallis metus ac nisl dapibus, at sodales ligula tempor.
+                Proin convallis pellentesque leo, eu porttitor ligula vehicula
+                sit amet. Vestibulum eu justo id quam cursus aliquam. Morbi
+                pretium nibh a laoreet ullamcorper. Aliquam molestie lacus
+                felis, id luctus eros malesuada eu. Class aptent taciti sociosqu
+                 ad litora torquent per conubia nostra, per inceptos himenaeos.
+                 Aliquam sit amet ligula libero. In magna purus, eleifend ac
+                 nisi a, vulputate tristique eros. Curabitur placerat orci
+                 vitae dui sagittis, auctor vestibulum urna vulputate.
+                 Vestibulum scelerisque elit lectus, in posuere leo accumsan
+                 non. Donec sit amet sagittis nisi, eu viverra dui.
+               </p>
+           </div>
+           <div id="99" style="display:none;">
+             <p>99 bottles of beer on the wall, 99 bottles of beer.
+               <br/>
+               Take one down, pass it around, 98 bottles of beer on the wall...
+             </p>
+            <p>98 bottles of beer on the wall, 98 bottles of beer.
+              <br/>
+              Take one down, pass it around, 97 bottles of beer on the wall...
+            </p>
+            <p>97 bottles of beer on the wall, 97 bottles of beer.
+              <br/>
+              Take one down, pass it around, 96 bottles of beer on the wall...
+            </p>
+            <p>96 bottles of beer on the wall, 96 bottles of beer.
+              <br/>
+              Take one down, pass it around, 95 bottles of beer on the wall...
+            </p>
+           </div>
+           <div id="lastThing" style="display:none;">
+             <p>This is the third thing.</p>
+           </div>
+          </div>
+        </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <script>
+  (function()
+  {
+    "use strict";
+
+    document.getElementById("text1").addEventListener("click",function()
+    {dispText("lorem","99","lastThing");});
+    document.getElementById("text2").addEventListener("click",function()
+    {dispText("99","lorem","lastThing");});
+    document.getElementById("text3").addEventListener("click",function()
+    {dispText("lastThing","lorem","99");});
+
+    function dispText(paraShow,paraNoShow1,paraNoShow2)
+    {
+      document.getElementById(paraShow).style.display='block';
+      document.getElementById(paraNoShow1).style.display='none';
+      document.getElementById(paraNoShow2).style.display='none';
+    }
+  })();
+  </script>
+
+</body>
+</html>

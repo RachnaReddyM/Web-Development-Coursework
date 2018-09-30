@@ -1,0 +1,78 @@
+
+
+<h2>Task Details</h2>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @issue.title %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @issue.description %>
+  </li>
+
+  <li>
+    <strong>Assignor:</strong>
+    <%= @issue.assignor %>
+  </li>
+
+  <li>
+    <strong>Assignee:</strong>
+    <%= @issue.user.name %>
+  </li>
+
+  <li>
+    <strong>Completed?:</strong>
+    <%= @issue.completed %>
+  </li>
+
+  <li>
+    <strong>Time taken:</strong>
+    <%= @issue.time_taken %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: issue_path(@conn, :edit, @issue) %></span> |
+<span><%= link "Back", to: page_path(@conn, :tasks) %></span>
+
+<br/>
+<br/>
+<button class="timeblocks btn btn-default"
+              data-issue_id="<%= @issue.id %>">Add Time Block</button>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Time ID</th>
+      <th>Task Start Time</th>
+      <th></th>
+      <th>Task End Time</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  <%= Enum.map (Enum.filter(Enum.reverse(@times), fn(x) -> (x.issue_id == @issue.id) end)), fn time -> %>
+
+   <tr>
+      <td><%= time.id %></td>
+      <td><%= time.start %></td>
+      <td><button class="start-button btn btn-default" data-issue_id= "<%= @issue.id %>" >Start Time</button></td>
+      <td><%= time.end %></td>
+      <td><button class="end-button btn btn-default" data-issue_id= "<%= @issue.id %>" >End Time</button></td>
+      <td><button class="delete-button btn btn-default" data-issue_id= "<%= @issue.id %>" >Delete Record</button></td>
+   </tr>
+  <% end %>
+  </tbody>
+ </table>
+
+
+
+<script>
+   window.time_path = "<%= time_path(@conn, :index) %>";
+   window.current_user_id = "<%= @current_user.id %>";
+</script>

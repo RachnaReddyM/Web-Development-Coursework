@@ -1,0 +1,38 @@
+<h2>Task Details</h2>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @issue.title %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @issue.description %>
+  </li>
+
+  <li>
+    <strong>Assignor:</strong>
+    <%= @issue.assignor %>
+  </li>
+
+  <li>
+    <strong>Assignee:</strong>
+    <%= @issue.user.name %>
+  </li>
+
+  <li>
+    <strong>Completed?:</strong>
+    <%= @issue.completed %>
+  </li>
+
+  <li>
+    <strong>Time taken:</strong>
+    <%= @issue.time_taken %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: issue_path(@conn, :edit, @issue) %></span> | 
+<span><%= link "Back", to: page_path(@conn, :tasks) %></span>

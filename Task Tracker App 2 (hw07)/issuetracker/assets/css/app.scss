@@ -1,0 +1,20 @@
+/* This file is for your main application css. */
+
+@import "bootstrap";
+
+header
+{
+    height:160px;
+    padding: 1em;
+    color: white;
+    background-color: black;
+    clear: left;
+    text-align: center;
+
+}
+
+.tags
+{
+ font-weight: bold;
+ font-style: italic;
+}

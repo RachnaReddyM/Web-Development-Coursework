@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Task 2</title>
+  <style>
+    #atBottom
+    {
+      position:absolute;
+      bottom:0;
+    }
+
+    button
+    {
+      border:2px solid;
+      background-color: lightblue;
+      padding:5px;
+      text-align:center;
+      cursor:pointer;
+    }
+
+    button:hover
+    {
+      background-color:white;
+      color:blue;
+    }
+  </style>
+
+</head>
+<body>
+  <h1>Task 2</h1>
+  <hr>
+  <h2 id="number">10</h2>
+  <button id="button1">Alert Number!</button>
+  <button id="button2">Increment Number!</button>
+  <button id="button3">Display Number!</button>
+  <div id="atBottom"></div>
+
+  <script>
+  (function()
+  {
+     "use strict";
+     var num = parseInt(document.getElementById("number").innerHTML);
+     document.getElementById("button1").addEventListener("click",dispnum);
+     document.getElementById("button2").addEventListener("click",incnum);
+     document.getElementById("button3").addEventListener("click",disppage);
+     function dispnum()
+     {
+        alert(num);
+     }
+     function incnum()
+     {
+        num=num+1;
+     }
+     function disppage()
+     {
+        var para=document.createElement("P");
+        para.appendChild(document.createTextNode(num))
+        document.getElementById("atBottom").appendChild(para);
+     }
+   })();
+  </script>
+
+
+
+</body>
+</html>

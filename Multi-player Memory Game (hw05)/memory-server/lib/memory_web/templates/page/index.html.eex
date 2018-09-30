@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+       <div class="col">
+           <h1 id="index-page">Play Memory Game</h1>
+               <br/>
+               <br/>
+               <form action="javascript:appendUrl();">
+                  Enter Username: <input type="text" name="uname" id ="uname">
+                  <br/>
+                  <br/>
+                  <input type="submit" value="Start Game!">
+               </form>
+      </div>
+  </div>
+</div>
+<script>
+    function appendUrl(){
+      var uname = document.getElementById('uname').value;
+      window.location.href = "/game/"+uname
+}
+</script>
